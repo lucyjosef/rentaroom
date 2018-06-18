@@ -20,10 +20,13 @@ class CreateRoomsTable extends Migration
             $table->string('adress');
             $table->string('fee');
             $table->boolean('rented');
-            $table->foreign('id_users')
-                  ->reference('id')->on('users')
-                  ->onDelete('cascade');
+            //$table->integer('id_user');
             $table->timestamps();
+        });
+
+        Schema::table('rooms', function(Blueprint $table) {
+            $table->engine = 'InnoDB';
+            $table->foreign('id_user')->references('id')->on('users');
         });
     }
 
