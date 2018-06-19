@@ -20,3 +20,31 @@ div#viewer > i {
 	font-size: 21rem;
     color: #999999;
 }
+
+.no-style {
+    text-decoration: none;
+    list-style: none;
+    padding-left: 0;
+}
+
+.no-style > li {
+    padding: 10px 15px;
+}
+
+.no-style > li > a > i {
+    padding-right: 10px;
+}
+
+.no-style > li:hover {
+    background-color: #303030;
+    color: #131313;
+}
+
+.no-style > li > a {
+    text-decoration: none;
+    color: lightgrey;
+}
+
+.side-liste {
+    margin-top: 30vh;
+}
