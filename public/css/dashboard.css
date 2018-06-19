@@ -48,3 +48,16 @@ div#viewer > i {
 .side-liste {
     margin-top: 30vh;
 }
+
+li[data-extra="add-room"] {
+    background-color: #5c7cfa;
+    border-top: solid 2px black;
+}
+
+li[data-extra="add-room"]:hover {
+    background-color: #4259B2;
+}
+
+section#content {
+    margin-left: 220px;
+}

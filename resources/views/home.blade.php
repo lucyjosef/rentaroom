@@ -6,17 +6,6 @@
 @endsection
 
 @section('content')
-<nav class="sidenav">
-    <ul class="no-style side-liste">
-        <li><a href="#">My profile</a></li>
-
-        @if(Auth::check() && Auth::user()->hasRole('admin'))
-        <li><a href="#">My posts</a></li>
-        @endif
-
-        <li><a href="#"><i class="fa fa-search"></i> Search</a></li>
-    </ul>
-</nav>
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2" id="viewer">
