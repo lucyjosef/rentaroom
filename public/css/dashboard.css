@@ -1,5 +1,6 @@
 div#app > nav.sidenav {
 	position: fixed;
+    top: 0;
     background-color: #131313;
     width: 16vw;
     max-width: 220px;

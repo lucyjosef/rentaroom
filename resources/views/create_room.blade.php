@@ -8,6 +8,7 @@
 <section id="content">
 	<div class="content-form">
 		<form class="create-room" method="POST" action="{{ route('rooms.store') }}">
+			{{ csrf_field() }}
 			<div class="form-row">
 				{{ Form::label('title', 'Post title') }}
 				<br>
@@ -23,13 +24,13 @@
 			<div class="form-row">
 				{{ Form::label('adress', 'Adress Precisions') }}
 				<br>
-				{{ Form::textarea('text') }}
+				{{ Form::input('text', 'adress') }}
 			</div>
 
 			<div class="form-row">
-				{{ Form::label('places', 'How many places') }}
+				{{ Form::label('nb-places', 'How many places') }}
 				<br>
-				{{ Form::number('text', 'places') }}
+				{{ Form::number('text', 'nb_places') }}
 			</div>
 
 			<div class="form-row">

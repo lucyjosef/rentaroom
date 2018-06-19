@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Room;
 
 class RoomsController extends Controller
 {
@@ -34,7 +35,23 @@ class RoomsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // $this->validate($request, [
+        //     'city' => 'required',
+        //     'title' => 'required',
+        //     'places' => 'required',
+        //     'fee' => 'required'
+        // ]);
+        
+        $room = new Room();
+        $room->title = $request->input('title');
+        $room->city = $request->input('city');
+        $room->adress = $request->input('adress');
+        $room->nb_places = $request->input('nb_places');
+        $room->fee = $request->input('fee');
+
+        $room->save();
+        
+        return redirect()->route('rooms.show', [$room]);
     }
 
     /**
@@ -45,7 +62,7 @@ class RoomsController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('room_detail', ['room' => Room::findOrFail($id)]);
     }
 
     /**

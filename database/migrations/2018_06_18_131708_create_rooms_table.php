@@ -15,11 +15,12 @@ class CreateRoomsTable extends Migration
     {
         Schema::create('rooms', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('nb_places');
+            $table->string('title');
+            $table->integer('nb_places')->nullable();
             $table->string('city');
-            $table->string('adress');
-            $table->string('fee');
-            $table->boolean('rented');
+            $table->string('adress')->nullable();
+            $table->string('fee')->nullable();
+            $table->boolean('rented')->default(false);
             //$table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });

@@ -1,0 +1,36 @@
+div.content-result {
+	position: relative;
+    margin: 8% 15%;
+    width: 60%;
+}
+p.warning {
+	color: #A10808;
+	font-weight: bold;
+}
+p.is-available {
+	color: #5c7cfa;
+	font-weight: bold;
+}
+a.delete-btn {
+	background-color: #A10808;
+	color: white;
+	padding: 5px;
+	border-radius: 5px;
+	margin-right: 15px;
+}
+a.delete-btn:hover {
+	color: white;
+}
+a.edit-btn {
+	background-color: #5c7cfa;
+	color: white;
+	padding: 5px;
+	border-radius: 5px;
+	margin-right: 15px;
+}
+a.edit-btn:hover {
+	color: white;
+}
+div.edit-admin {
+	padding-top: 30px;
+}
