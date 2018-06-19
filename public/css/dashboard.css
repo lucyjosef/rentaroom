@@ -1,0 +1,22 @@
+div#app > nav.sidenav {
+	position: fixed;
+    background-color: #131313;
+    width: 16vw;
+    max-width: 220px;
+    color: white;
+    height: 100vh;
+}
+
+div#viewer {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 80vw;
+    margin-left: 74px !important;
+}
+
+div#viewer > i {
+	font-size: 21rem;
+    color: #999999;
+}
