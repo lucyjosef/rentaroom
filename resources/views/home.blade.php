@@ -6,10 +6,14 @@
 @endsection
 
 @section('content')
-<nav class="sidenav"></nav>
+<nav class="sidenav">
+    <ul>
+        <li></li>
+    </ul>
+</nav>
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-8 col-md-offset-2" id="viewer">
             <i class="fab fa-fort-awesome"></i>
         </div>
     </div>
