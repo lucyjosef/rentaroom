@@ -14,8 +14,9 @@ class CreateSelectedoptionsTable extends Migration
     public function up()
     {
         Schema::create('selectedoptions', function (Blueprint $table) {
-            $table->foreign('rent_id')->references('id')->on('rent');
-            $table->foreign('option_id')->references('id')->on('option');
+            $table->increments('id');
+            //$table->foreign('rent_id')->references('id')->on('rents');
+            //$table->foreign('option_id')->references('id')->on('option');
         });
     }
 

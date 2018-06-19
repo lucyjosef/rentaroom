@@ -13,6 +13,7 @@ class CreateLocationTable extends Migration
      */
     public function up()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::create('rent', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
@@ -20,9 +21,10 @@ class CreateLocationTable extends Migration
             $table->dateTime('EndDate');
             $table->decimal('Cost',8,2);
             $table->boolean('Billed');
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('room_id')->references('id')->on('rooms');
+            // $table->foreign('user_id')->references('id')->on('users');
+            // $table->foreign('room_id')->references('id')->on('rooms');
         });
+        Schema::enableForeignKeyConstraints();
     }
 
     /**
