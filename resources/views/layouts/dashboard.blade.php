@@ -25,9 +25,14 @@ $user_id = Auth::id();
         <nav class="sidenav">
             <ul class="no-style side-liste">
                 <li><a href="#"><i class="fa fa-user-alt"></i> My profile</a></li>
+                <li data-extra="add-room"><a href="#"><i class="fa fa-search"></i> Search</a></li>
                 <li><a href="{{ route('rooms.index', ['user_id' => $user_id]) }}"><i class="fa fa-list-ul"></i> My posts</a></li>
-                <li><a href="#"><i class="fa fa-search"></i> Search</a></li>
-                <li data-extra="add-room"><a href="{{route('rooms.create')}}"><i class="fa fa-plus-square"></i> Create post</a></li> 
+                <li><a href="{{route('rooms.create')}}"><i class="fa fa-plus-square"></i> Create post</a></li> 
+                
+                @if(Auth::user()->hasRole('admin'))
+                <li><a href="{{ route('rooms.index', ['user_id' => $user_id]) }}"><i class="fa fa-list-ul"></i> My posts</a></li>
+                <li><a href="{{route('rooms.create')}}"><i class="fa fa-plus-square"></i> Create post</a></li> 
+                @endif
             </ul>
         </nav>
         @yield('content')

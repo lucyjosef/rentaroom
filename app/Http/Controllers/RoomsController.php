@@ -89,7 +89,7 @@ class RoomsController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('edit-room', ['room' => Room::findOrFail($id)]);
     }
 
     /**

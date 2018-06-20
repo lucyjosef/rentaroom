@@ -15,31 +15,31 @@ $user_id = Auth::user()->id;
 			<div class="form-row">
 				{{ Form::label('title', 'Post title') }}
 				<br>
-				{{ Form::input('text', 'title') }}
+				{{ Form::input('text', 'title', $room->title) }}
 			</div>
 
 			<div class="form-row">
 				{{ Form::label('city', 'City') }}
 				<br>
-				{{ Form::input('text', 'city') }}
+				{{ Form::input('text', 'city', $room->city) }}
 			</div>
 
 			<div class="form-row">
 				{{ Form::label('adress', 'Adress Precisions') }}
 				<br>
-				{{ Form::input('text', 'adress') }}
+				{{ Form::input('text', 'adress', $room->adress) }}
 			</div>
 
 			<div class="form-row">
 				{{ Form::label('nb-places', 'How many places') }}
 				<br>
-				{{ Form::input('text', 'nb_places') }}
+				{{ Form::input('text', 'nb_places', $room->nb_places) }}
 			</div>
 
 			<div class="form-row">
 				{{ Form::label('fee', 'Fee') }}
 				<br>
-				{{ Form::input('text', 'fee') }}
+				{{ Form::input('text', 'fee', $room->fee) }}
 			</div>
 
 			<div class="form-row">
