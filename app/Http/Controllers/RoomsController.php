@@ -101,7 +101,16 @@ class RoomsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $room = Room::find($id);
+        $room->title = $request->input('title');
+        $room->city = $request->input('city');
+        $room->nb_places = $request->input('nb_places');
+        $room->fee = $request->input('fee');
+
+        $room->save();
+
+        return back()->with('message', 'Successfully updates !');
     }
 
     /**
@@ -112,6 +121,10 @@ class RoomsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $room = Room::find($id);
+        $room->delete();
+
+        Session::flash('message', 'Successfully deleted the post');
+        return redirect()->route('/home');
     }
 }

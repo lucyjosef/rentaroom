@@ -10,8 +10,9 @@ $user_id = Auth::user()->id;
 ?>
 <section id="content">
 	<div class="content-form">
-		<form class="create-room" method="POST" action="{{ route('rooms.store')}}">
+		<form class="create-room" method="POST" action="{{ route('rooms.update', [$room->id])}}">
 			{{ csrf_field() }}
+			{{ method_field('PUT')}}
 			<div class="form-row">
 				{{ Form::label('title', 'Post title') }}
 				<br>
@@ -41,6 +42,8 @@ $user_id = Auth::user()->id;
 				<br>
 				{{ Form::input('text', 'fee', $room->fee) }}
 			</div>
+
+			<p class="success">{{ session()->get('message') }}</p>
 
 			<div class="form-row">
 				{{ Form::submit('submit') }}

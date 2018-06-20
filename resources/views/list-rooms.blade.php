@@ -18,6 +18,7 @@
 		        <a href="{{ route('rooms.destroy', [$room->id]) }}" class="delete-btn"><i class="fa fa-trash-alt"></i> Delete</a>
 
 		        <a href="{{ route('rooms.edit', [$room->id]) }}" class="edit-btn"><i class="fa fa-edit"></i> Edit</a>
+
 		    </div>
 		</div>
 		@endforeach

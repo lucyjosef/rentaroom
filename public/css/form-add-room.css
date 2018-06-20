@@ -36,3 +36,8 @@ div.form-row > input[type="submit"] {
 div.form-row > input[type="submit"]:hover {
 	background-color: #4259B2;
 }
+p.success {
+	color: green;
+	width: 72%;
+	text-align: center;
+}

@@ -12,5 +12,6 @@
             <i class="fab fa-fort-awesome"></i>
         </div>
     </div>
+    <p>{{ session()->get('message') }}</p>
 </div>
 @endsection
