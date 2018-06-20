@@ -26,3 +26,14 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('users','UserController');
+
+Route::get('/SignOut', function () {
+    Auth::logout();
+    return view('welcome');
+});
+
+Route::get('/DeleteUser/{id}', 'UserController@delete')->name('users.delete');
+//Route::get('/MajUser/{id}/{name}/{email}/?{pwd}', 'UserController@maj')->name('users.maj');
+Route::get('/MajUser/{id}/{name}/{email}/?{pwd}', 'UserController@maj')->name('users.maj');

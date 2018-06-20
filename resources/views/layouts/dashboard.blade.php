@@ -13,14 +13,21 @@
     <!-- Styles -->
     @yield('style')
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet">
 
 </head>
 <body>
     <div id="app">
-        @yield('content')
+      <nav class="sidenav">
+          <ul>
+              <li><a href="{{ route('users.index') }}">List users</a></li>
+          </ul>
+      </nav>
+      @yield('content')
     </div>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+
 </body>
 </html>
