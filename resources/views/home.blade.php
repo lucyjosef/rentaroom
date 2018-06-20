@@ -6,7 +6,6 @@
 @endsection
 
 @section('content')
-
 <div class="container">
   <div class="flex-center position-ref full-height">
       @if (Route::has('login'))
@@ -17,7 +16,8 @@
   </div>
     <div class="row">
         <div class="col-md-8 col-md-offset-2" id="viewer">
-            <i class="fab fa-fort-awesome"></i>
+            <i class="fab fa-fort-awesome"></i><br>
+            <p class="notification">{{ session()->get('message') }}</p>
         </div>
     </div>
 </div>

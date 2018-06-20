@@ -19,12 +19,23 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+Route::get('admin', 'Admin\AdminController@index');
+Route::resource('admin/roles', 'Admin\RolesController');
+Route::resource('admin/permissions', 'Admin\PermissionsController');
+Route::resource('admin/users', 'Admin\UsersController');
+Route::get('admin/generator', ['uses' => '\Appzcoder\LaravelAdmin\Controllers\ProcessController@getGenerator']);
+Route::post('admin/generator', ['uses' => '\Appzcoder\LaravelAdmin\Controllers\ProcessController@postGenerator']);
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+<<<<<<< HEAD
+/*
+* CRUD ROOMS
+*/
+Route::resource('rooms', 'RoomsController', ['except' => ['index']]);
+Route::get('{user_id}/rooms', ['as' => 'rooms.index', 'uses' => 'RoomsController@index']);
 
-Auth::routes();
-
+>>>>>>> dev
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('users','UserController');
@@ -37,3 +48,4 @@ Route::get('/SignOut', function () {
 Route::get('/DeleteUser/{id}', 'UserController@delete')->name('users.delete');
 //Route::get('/MajUser/{id}/{name}/{email}/?{pwd}', 'UserController@maj')->name('users.maj');
 Route::get('/MajUser/{id}/{name}/{email}/?{pwd}', 'UserController@maj')->name('users.maj');
+=======
