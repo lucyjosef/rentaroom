@@ -1,22 +1,16 @@
-@extends('layouts.app')
+@extends('layouts.dashboard')
+
+@section('style')
+<link href="{{ asset('css/dashboard.css') }}" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+@endsection
 
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
-
-                <div class="panel-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
-                </div>
-            </div>
+        <div class="col-md-8 col-md-offset-2" id="viewer">
+            <i class="fab fa-fort-awesome"></i><br>
+            <p class="notification">{{ session()->get('message') }}</p>
         </div>
     </div>
 </div>

@@ -1,0 +1,70 @@
+div#app > nav.sidenav {
+	position: fixed;
+    top: 0;
+    background-color: #131313;
+    width: 16vw;
+    max-width: 220px;
+    color: white;
+    height: 100vh;
+}
+
+div#viewer {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 80vw;
+    margin-left: 74px !important;
+}
+
+div#viewer > i {
+	font-size: 21rem;
+    color: #999999;
+}
+
+.no-style {
+    text-decoration: none;
+    list-style: none;
+    padding-left: 0;
+}
+
+.no-style > li {
+    padding: 10px 15px;
+}
+
+.no-style > li > a > i {
+    padding-right: 10px;
+}
+
+.no-style > li:hover {
+    background-color: #303030;
+    color: #131313;
+}
+
+.no-style > li > a {
+    text-decoration: none;
+    color: lightgrey;
+}
+
+.side-liste {
+    margin-top: 30vh;
+}
+
+li[data-extra="add-room"] {
+    background-color: #5c7cfa;
+    border-top: solid 2px black;
+}
+
+li[data-extra="add-room"]:hover {
+    background-color: #4259B2;
+}
+
+section#content {
+    margin-left: 220px;
+}
+
+p.notification {
+    color: #5c7cfa;
+    position: absolute;
+    bottom: 30px;
+}
