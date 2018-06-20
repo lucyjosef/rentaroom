@@ -31,5 +31,6 @@ Auth::routes();
 /*
 * CRUD ROOMS
 */
-Route::resource('rooms', 'RoomsController');
+Route::resource('rooms', 'RoomsController', ['except' => ['index']]);
+Route::get('{user_id}/rooms', ['as' => 'rooms.index', 'uses' => 'RoomsController@index']);
 

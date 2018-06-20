@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Auth;
 use Illuminate\Http\Request;
 use App\Room;
+use App\User;
+
 
 class RoomsController extends Controller
 {
@@ -12,9 +16,21 @@ class RoomsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($user_id)
     {
-        //
+        $user_id = Auth::id();
+        $rooms = Room::all();
+        $room_fk_id = Room::where('user_id', '=', $user_id)->orderBy('title', 'desc')->get();
+
+        $room_table = [];
+
+        foreach ($rooms as $room) {
+            if(Room::find($room_fk_id)) {
+                array_push($room_table, $room);
+            }
+        }
+
+        return view('list-rooms', ['room_table' => $room_table]);
     }
 
     /**

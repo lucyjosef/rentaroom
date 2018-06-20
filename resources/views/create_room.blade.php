@@ -5,9 +5,12 @@
 @endsection
 
 @section('content')
+<?php 
+$user_id = Auth::user()->id;
+?>
 <section id="content">
 	<div class="content-form">
-		<form class="create-room" method="POST" action="{{ route('rooms.store') }}">
+		<form class="create-room" method="POST" action="{{ route('rooms.store')}}">
 			{{ csrf_field() }}
 			<div class="form-row">
 				{{ Form::label('title', 'Post title') }}

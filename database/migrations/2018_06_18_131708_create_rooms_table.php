@@ -22,6 +22,7 @@ class CreateRoomsTable extends Migration
             $table->string('fee')->nullable();
             $table->boolean('rented')->default(false);
             //$table->foreign('user_id')->references('id')->on('users');
+            $table->integer('user_id')->default('1'); // to be removed !!!
             $table->timestamps();
         });
     }
