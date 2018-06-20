@@ -1,0 +1,38 @@
+div.form-row {
+	padding: 20px 0;
+}
+
+div.content-form {
+	display: block;
+	margin-left: 15%;
+}
+
+div.form-row > label {
+	padding-right: 50px;
+}
+
+div.form-row > input {
+	width: 50vw;
+	border: none;
+	border-radius: 5px;
+	padding: 2px 10px;
+}
+
+div.form-row > textarea {
+	width: 50vw;
+	border: none;
+	border-radius: 5px;
+	padding: 2px 10px;
+}
+input[type="submit"] {
+	background-color: #5c7cfa;
+	border: none;
+	color: white;
+	padding: 10px;
+	border-radius: 5px;
+	font-weight: bold;
+	width: 10% !important;
+}
+input[type="submit"]:hover {
+	background-color: #4259B2;
+}

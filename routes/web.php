@@ -1,4 +1,5 @@
 <?php
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,3 +35,11 @@ Auth::routes();
 Route::resource('rooms', 'RoomsController', ['except' => ['index']]);
 Route::get('{user_id}/rooms', ['as' => 'rooms.index', 'uses' => 'RoomsController@index']);
 
+Route::get('/search', function(){
+	return view('search');
+})->name('search');
+
+Route::get('/search/results', function (Request $request) {
+    $results =  App\Room::search($request->search)->get();
+    return view('search_results', ['results' => $results]);
+})->name('results');

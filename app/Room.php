@@ -2,10 +2,13 @@
 
 namespace App;
 
+use Laravel\Scout\Searchable;
 use Illuminate\Database\Eloquent\Model;
 
 class Room extends Model
 {
+	use Searchable;
+
 	protected $primaryKey = 'id';
     
     protected $fillable = [
@@ -17,4 +20,14 @@ class Room extends Model
     ];
 
     protected $table = 'rooms';
+
+    public function searchAs()
+    {
+    	return 'city';
+    }
+
+    public function getScoutKey()
+    {
+    	return $this->city;
+    }
 }
