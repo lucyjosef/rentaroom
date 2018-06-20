@@ -15,7 +15,9 @@
 			<p>{{ $room->fee }} EUR</p>
 			<p>{{ $room->created_at }}</p>
 			<div class="edit-admin">
-		        <a href="{{ route('rooms.destroy', [$room->id]) }}" class="delete-btn"><i class="fa fa-trash-alt"></i> Delete</a>
+		        {{ Form::open(['method' => 'DELETE', 'route' => ['rooms.destroy', $room->id]]) }}
+				    {{ Form::submit('Delete', ['class' => 'delete-btn']) }}
+				{{ Form::close() }}
 
 		        <a href="{{ route('rooms.edit', [$room->id]) }}" class="edit-btn"><i class="fa fa-edit"></i> Edit</a>
 

@@ -62,3 +62,9 @@ li[data-extra="add-room"]:hover {
 section#content {
     margin-left: 220px;
 }
+
+p.notification {
+    color: #5c7cfa;
+    position: absolute;
+    bottom: 30px;
+}

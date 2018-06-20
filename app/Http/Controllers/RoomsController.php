@@ -124,7 +124,7 @@ class RoomsController extends Controller
         $room = Room::find($id);
         $room->delete();
 
-        Session::flash('message', 'Successfully deleted the post');
-        return redirect()->route('/home');
+        //Session::flash('message', 'Successfully deleted the post');
+        return redirect()->route('home')->with('message', 'You\'ve successfully deleted your post');
     }
 }
