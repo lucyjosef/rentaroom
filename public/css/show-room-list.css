@@ -12,33 +12,92 @@ p.is-available {
 	font-weight: bold;
 }
 .delete-btn {
-	background-color: #A10808;
-	color: white;
+	color: #A10808;
+	border: 1px solid #A10808;
+	background-color: white;
 	padding: 5px;
 	border-radius: 5px;
 	margin-bottom: 15px;
-	border: none;
 }
 .delete-btn:hover {
 	color: white;
+	background-color: #A10808;
 }
 a.edit-btn {
-	background-color: #5c7cfa;
-	color: white;
+	background-color: white;
+	color: #5c7cfa;
 	padding: 5px;
+	border: 1px solid #5c7cfa;
 	border-radius: 5px;
 	margin-right: 15px;
 }
 a.edit-btn:hover {
 	color: white;
+	background-color: #5c7cfa;
 }
 div.edit-admin {
 	padding-top: 30px;
 }
 div.list-row {
-	border: solid grey 3px;
     border-radius: 4px;
     padding: 20px;
     width: 120%;
     margin-bottom: 50px;
+    background-color: white;
+}
+div.reserve {
+	position: relative;
+    top: -155px;
+    right: -45vw;
+    font-size: 5em;
+}
+div.reserve a {
+	color: #5c7cfa;
+}
+
+div[data-modal="outside"] {
+	position: fixed;
+    z-index: 1000;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(255,255,255,0.2);
+    left: 182px;
+    top: 0;
+    padding: 2% 10%;
+}
+div[data-modal="inside"] {
+	padding: 20px;
+    background-color: rgba(255,255,255,0.9);
+    width: 59%;
+    border-radius: 17px;
+    box-shadow: 1px -1px 34px -3px grey;
+    padding-bottom: 50px;
+}
+div[data-modal="inside"] input {
+	border-radius: 5px;
+	border: 1px grey solid; 
+	width: 100%;
+	padding: 10px;
+}
+div[data-modal="inside"] textarea {
+	border-radius: 5px;
+	border: 1px grey solid; 
+	width: 100%;
+	padding: 10px;
+}
+[data-btn="book"] {
+	padding: 20px 50px;
+    background-color: #5c7cfa;
+    color: white;
+    border-radius: 50px;
+    float: right;
+    margin-top: 10px;
+}
+.hidden {
+	display: none;
+}
+div#close {
+	float: right;
+    cursor: pointer;
+    font-size: 2rem;
 }
