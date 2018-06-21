@@ -38,7 +38,7 @@
 		<div data-modal="inside">
 			<div id="close"><i class="fa fa-times-circle"></i></div>
 			<h1>Get in touch !</h1>
-			<form class="book" method="POST" action="{{ route('book-create') }}">
+			<form class="book" method="GET" action="{{ route('home') }}">
 				{{ csrf_field() }}
 				<div class="form-row">
 					{{ Form::label('name', 'You complete name') }}

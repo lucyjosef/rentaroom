@@ -3,6 +3,11 @@
 @section('style')
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<style type="text/css">
+  div.top-right {
+    z-index: 2000;
+  }
+</style>
 @endsection
 
 @section('content')

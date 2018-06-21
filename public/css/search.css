@@ -7,6 +7,10 @@ div.content-form {
 	margin-left: 15%;
 }
 
+div.content-result {
+	padding-left: 100px;
+}
+
 div.form-row > label {
 	padding-right: 50px;
 }
