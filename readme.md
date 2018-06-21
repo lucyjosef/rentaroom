@@ -7,33 +7,42 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-## Get repo
+## Install
 
 clone repo
+
 php artisan key:generate
+
 composer install
 
 ## Team
 
 Lucy Joseph (Team Leader)(L)
+
 Vincent Thomas(V)
+
 Guillaume Mourlon (G)
+
 Simon bonhoure (S)
 
 ## Activity
 
 Install (LVGS)
+
 Vagrant + php7.0 + apache2 + mysql + laravel
 
 Base de données (LVGS)
+
 MCD + php artisan migration
 
 Front (S)
+
 Ecran Welcome
 
 Front (G)
 
 CRUD user profile (V)
+
 Edit - Delete - Change password - Sign Out
 
 CRUD Room (L)
