@@ -43,3 +43,11 @@ Route::get('/search/results', function (Request $request) {
     $results =  App\Room::search($request->search)->get();
     return view('search_results', ['results' => $results]);
 })->name('results');
+
+
+/*
+* BOOKING
+*/
+Route::post('/book/create', 'CalendarController@create')->name('book-create');
+
+Route::get('events', 'EventController@index')->name('events');

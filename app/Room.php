@@ -16,7 +16,7 @@ class Room extends Model
     	'city',
     	'adress',
     	'nb_places',
-    	'fee'
+    	'fee' 
     ];
 
     protected $table = 'rooms';

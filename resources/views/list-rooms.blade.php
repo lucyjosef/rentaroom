@@ -33,11 +33,12 @@
 		</div>
 		@endforeach
 	</div>
+	<!-- MODAL -->
 	<div data-modal="outside" class="hidden">
 		<div data-modal="inside">
 			<div id="close"><i class="fa fa-times-circle"></i></div>
 			<h1>Get in touch !</h1>
-			<form class="book" method="POST">
+			<form class="book" method="POST" action="{{ route('book-create') }}">
 				{{ csrf_field() }}
 				<div class="form-row">
 					{{ Form::label('name', 'You complete name') }}
@@ -64,21 +65,19 @@
 				</div>
 
 				<div class="form-row">
-					{{ Form::label('from', 'from') }}
+					{{ Form::label('from', 'From') }}
 					<br>
-					{{ Form::date('text', 'from') }}
+					{{ Form::input('text', 'from') }}
 				</div>
 
 				<div class="form-row">
 					{{ Form::label('to', 'To') }}
 					<br>
-					{{ Form::date('text', 'to') }}
+					{{ Form::input('text', 'to') }}
 				</div>
 
-				<p class="success">{{ session()->get('message') }}</p>
-
 				<div class="form-row">
-					<a data-btn="book" href="#">Submit</a>
+					{{ Form::submit('OK') }}
 				</div>
 			</form>
 		</div>
