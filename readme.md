@@ -32,34 +32,23 @@ Simon bonhoure (S)
 ## Activity
 
 
-Install (LVGS)
-
-Vagrant + php7.0 + apache2 + mysql + laravel
+Install (LVGS) - Vagrant + php7.0 + apache2 + mysql + laravel
 
 
-Base de données (LVGS)
-
-MCD + php artisan migration
+Base de données (LVGS) - MCD + php artisan migration
 
 
-Front (S)
-
-Ecran Welcome
+Front (S) - Ecran Welcome
 
 
 Front (G)
 
 
-CRUD user profile (V)
-
-Edit - Delete - Change password - Sign Out
+CRUD user profile (V) - Edit + Delete + Change password + Sign Out
 
 
-CRUD Room (L)
+CRUD Room - View Research - View Dashboard (L)
 
-View Research (L)
-
-View Dashboard (L)
 
 
 ## License
