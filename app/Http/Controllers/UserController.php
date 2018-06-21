@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\UserModel;
 use Illuminate\Support\Facades\View;
+use Auth;
 
 class UserController extends Controller
 {

@@ -29,7 +29,7 @@ $user_id = Auth::id();
 
 
                 <li><a href="{{ route('users.show', ['user_id' => $user_id]) }}"><i class="fa fa-user-alt"></i> My profile</a></li>
-                <li data-extra="add-room"><a href="#"><i class="fa fa-search"></i> Search</a></li>
+                <li data-extra="add-room"><a href="{{ route('search') }}"><i class="fa fa-search"></i> Search</a></li>
                 <li><a href="{{ route('rooms.index', ['user_id' => $user_id]) }}"><i class="fa fa-list-ul"></i> My posts</a></li>
                 <li><a href="{{route('rooms.create')}}"><i class="fa fa-plus-square"></i> Create post</a></li>
 
