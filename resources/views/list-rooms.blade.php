@@ -4,6 +4,11 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('css/show-room-list.css') }}">
 @endsection
 
+@section('script')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="{{ asset('js/modal.js') }}"></script>
+@endsection
+
 @section('content')
 <section id="content">
 	<div class="content-result">
@@ -22,8 +27,60 @@
 		        <a href="{{ route('rooms.edit', [$room->id]) }}" class="edit-btn"><i class="fa fa-edit"></i> Edit</a>
 
 		    </div>
+		    <div class="reserve">
+		    	<a href="#" data-action="open-modal"><i class="fab fa-fort-awesome-alt"></i></a>
+		    </div>
 		</div>
 		@endforeach
+	</div>
+	<!-- MODAL -->
+	<div data-modal="outside" class="hidden">
+		<div data-modal="inside">
+			<div id="close"><i class="fa fa-times-circle"></i></div>
+			<h1>Get in touch !</h1>
+			<form class="book" method="POST" action="{{ route('book-create') }}">
+				{{ csrf_field() }}
+				<div class="form-row">
+					{{ Form::label('name', 'You complete name') }}
+					<br>
+					{{ Form::input('text', 'name') }}
+				</div>
+
+				<div class="form-row">
+					{{ Form::label('email', 'Your e-mail') }}
+					<br>
+					{{ Form::input('text', 'email') }}
+				</div>
+
+				<div class="form-row">
+					{{ Form::label('comment', 'Any precision on request') }}
+					<br>
+					{{ Form::textarea('text', 'precisions', ['size' => '50x5']) }}
+				</div>
+
+				<div class="form-row">
+					{{ Form::label('nb-person', 'How many guest') }}
+					<br>
+					{{ Form::input('text', 'nb_person') }}
+				</div>
+
+				<div class="form-row">
+					{{ Form::label('from', 'From') }}
+					<br>
+					{{ Form::input('text', 'from') }}
+				</div>
+
+				<div class="form-row">
+					{{ Form::label('to', 'To') }}
+					<br>
+					{{ Form::input('text', 'to') }}
+				</div>
+
+				<div class="form-row">
+					{{ Form::submit('OK') }}
+				</div>
+			</form>
+		</div>
 	</div>
 </section>
 @endsection
