@@ -51,7 +51,10 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+      // Get user from id
+      $UserList = UserModel::find($id);
+
+      return view('users.show')->with('UserList',$UserList);
     }
 
     /**
@@ -62,8 +65,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
-        // Get All users
+
         $UserList = UserModel::find($id);
 
         return view('users.edit')->with('UserList',$UserList);
@@ -98,20 +100,48 @@ class UserController extends Controller
         // Remove user from id
         UserModel::destroy($id);
 
-        // Get All users
-        $UserList = UserModel::all();
-
         // load the view and pass the $UserList
-        return view('users.index')->with('UserList',$UserList);
+        return view('welcome');
     }
 
-    public function maj($id,$name,$email,$pwd)
+    public function maj(request $request)
     {
-        dd($name);
-        // Get All users
-        $UserList = UserModel::all();
+        //dd($request);
+        // Update users
+        $UserToUpdate = UserModel::find($request['id']);
+        $UserToUpdate->name = $request['name'];
+        $UserToUpdate->email = $request['email'];
+        $UserToUpdate->save();
 
         // load the view and pass the $UserList
-        return view('users.index')->with('UserList',$UserList);
+        return view('home');
+    }
+
+    public function chgpwd(request $request)
+    {
+        // load the view and pass the $UserList
+        $MsgError = ['false',""];
+        return view('users.changepwd')->with('MsgError',$MsgError);
+    }
+
+    public function updpwd(request $request)
+    {
+
+      if ($request['password'] != $request['password_confirmation']){
+        $MsgError = ['true',"The password confirmation does not match."];
+        return view('users.changepwd')->with('MsgError',$MsgError);
+      } else {
+        $PwdUpdate = UserModel::find($request['id']);
+        $PwdUpdate->password = bcrypt($request['password']);
+        $PwdUpdate->save();
+        return view('home');
+      }
+
+    }
+
+    public function signout()
+    {
+      Auth::logout();
+      return view('welcome');
     }
 }

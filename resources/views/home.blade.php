@@ -10,7 +10,7 @@
   <div class="flex-center position-ref full-height">
       @if (Route::has('login'))
           <div class="top-right links">
-              <a href="{{ url('/SignOut') }}">Sign Out</a>
+              <a href="{{ route('users.signout') }}">Sign Out</a>
           </div>
       @endif
   </div>

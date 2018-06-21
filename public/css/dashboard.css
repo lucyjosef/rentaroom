@@ -83,3 +83,7 @@ p.notification {
 		text-decoration: none;
 		text-transform: uppercase;
 }
+
+.hidden {
+	display: none;
+}

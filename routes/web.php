@@ -40,11 +40,13 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('users','UserController');
 
-Route::get('/SignOut', function () {
-    Auth::logout();
-    return view('welcome');
-});
+//Route::get('/SignOut', function () {
+//    Auth::logout();
+//    return view('welcome');
+//});
 
 Route::get('/DeleteUser/{id}', 'UserController@delete')->name('users.delete');
 Route::get('/MajUser', 'UserController@maj')->name('users.maj');
 Route::get('/ChgPwd', 'UserController@chgpwd')->name('users.chgpwd');
+Route::post('/UpdatePwd', 'UserController@updpwd')->name('users.updpwd');
+Route::get('/SignOut', 'UserController@signout')->name('users.signout');
