@@ -26,8 +26,8 @@
             width: 100%;
             padding: 1vh;
             padding-left: 17vw;
-            border-bottom: 1px solid black;
-            background-color: lightblue;
+            /*border-bottom: 1px solid black;*/
+            /*background-color: white;*/
         }
         .menu {
             display: flex;
@@ -35,7 +35,7 @@
             align-items: center;
             height: 100%;
         }
-        .links > a {
+        [data-id="home"] {
             margin: 0 1vw;
             color: #636b6f;
             cursor: pointer;
@@ -44,8 +44,10 @@
             letter-spacing: .1rem;
             text-decoration: none;
             text-transform: uppercase;
+            position: absolute;
+            right: 7%;
         }
-        .links > a:hover {
+        [data-id="home"]:hover {
             color: black;
         }
     </style>
@@ -55,13 +57,13 @@
 <?php
 $user_id = Auth::id();
 ?>
-<body style="background-color: lightgray;">
+<body >
     <div id="app">
         <div class="position-menu">
             @if (Route::has('login'))
                 <div class="menu links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a data-id="home" href="{{ url('/home') }}">Home</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
                         <a href="{{ route('register') }}">Register</a>

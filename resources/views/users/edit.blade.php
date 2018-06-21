@@ -1,5 +1,9 @@
 @extends('layouts.dashboard')
 
+@section('style')
+<link rel="stylesheet" type="text/css" href="{{ asset('css/user-profil.css') }}">
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row">
@@ -42,12 +46,13 @@
                               </div>
                           </div>
 
-                          <div class="form-group">
+                          <div class="form-group edit-container">
                               <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="custom-btn-2"><i class="fas fa-edit"></i>
                                     Update
                                 </button>
-                                <a href="{{ route('home') }}"><button type="text" class="btn btn-primary">
+                                <a href="{{ route('home') }}"><button type="text" class="custom-btn">
+                                  <i class="far fa-trash-alt"></i>
                                     Cancel
                                 </button></a>
                               </div>

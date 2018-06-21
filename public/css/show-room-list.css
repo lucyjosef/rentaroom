@@ -79,6 +79,12 @@ div[data-modal="inside"] input {
 	width: 100%;
 	padding: 10px;
 }
+div[data-modal="inside"] input[type="submit"] {
+	margin-top: 20px;
+	background-color: #5c7cfa;
+	color: white;
+	border: none; 
+}
 div[data-modal="inside"] textarea {
 	border-radius: 5px;
 	border: 1px grey solid; 
