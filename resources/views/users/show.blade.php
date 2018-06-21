@@ -1,5 +1,9 @@
 @extends('layouts.dashboard')
 
+@section('style')
+<link rel="stylesheet" type="text/css" href="{{ asset('css/user-profil.css') }}">
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row">
@@ -31,17 +35,18 @@
                         </div>
 
                         <div class="form-group">
-                            <div style="margin-top:1em;" class="col-md-8 col-md-offset-0">
-                                <a href="{{ route('users.edit',$RouteId,'/edit') }}"><button type="text" class="btn btn-primary">
-                                    Edit
+                            <div style="margin-top:3em;" class="col-md-8 col-md-offset-0 edit-container">
+                                <a href="{{ route('users.edit',$RouteId,'/edit') }}"><button type="text" class="custom-btn"><i class="fas fa-edit"></i>
+                                     Edit
                                 </button></a>
-                                <a href="{{ route('users.chgpwd') }}"><button type="text" class="btn btn-primary">
-                                    Change password
+                                <a href="{{ route('users.chgpwd') }}"><button type="text" class="custom-btn"><i class="fas fa-unlock-alt"></i>
+                                      Change password
                                 </button></a>
-                                <a href="{{ route('users.delete',$RouteId) }}"><button type="text" class="btn btn-primary">
+                                <a href="{{ route('users.delete',$RouteId) }}"><button type="text" class="custom-btn"><i class="far fa-trash-alt"></i>
+
                                     Delete
                                 </button></a>
-                                <a href="{{ route('home') }}"><button type="text" class="btn btn-primary">
+                                <a href="{{ route('home') }}"><button type="text" class="custom-btn-2"><i class="fas fa-ban"></i>
                                     Cancel
                                 </button></a>
                             </div>

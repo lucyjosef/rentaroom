@@ -7,6 +7,10 @@
   div.top-right {
     z-index: 2000;
   }
+  h2#slogan {
+    position: absolute;
+    bottom: 40%;
+  }
 </style>
 @endsection
 
@@ -22,7 +26,8 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2" id="viewer">
             <i class="fab fa-fort-awesome"></i><br>
-            <p class="notification">{{ session()->get('message') }}</p>
+            <p class="notification">{{ session()->get('message') }}</p><br>
+            <h2 id="slogan">Find a castle ! Or rent a room</h2>
         </div>
     </div>
 </div>

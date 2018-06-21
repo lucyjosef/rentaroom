@@ -1,0 +1,29 @@
+.custom-btn {
+	background-color: white;
+    border: solid 1px #5c7cfa;
+    padding: 5px 20px;
+}
+.custom-btn:hover {
+	color : white;
+    background-color: #5c7cfa;
+}
+
+.custom-btn-2 {
+	background-color: #5c7cfa;
+    border: solid 1px #5c7cfa;
+    padding: 5px 20px;
+    color: white; 
+}
+.custom-btn-2:hover {
+	color : #5c7cfa;
+    background-color: white;
+}
+
+div.edit-container a {
+	color: #5c7cfa;
+}
+
+div.edit-container {
+	width: 100%;
+	color: #5c7cfa;
+}

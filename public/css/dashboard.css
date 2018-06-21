@@ -20,6 +20,8 @@ div#viewer {
 div#viewer > i {
 	font-size: 21rem;
     color: #999999;
+    position: absolute;
+    top: 20%;
 }
 
 .no-style {
