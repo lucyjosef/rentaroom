@@ -29,6 +29,7 @@ Route::get('admin/generator', ['uses' => '\Appzcoder\LaravelAdmin\Controllers\Pr
 Route::post('admin/generator', ['uses' => '\Appzcoder\LaravelAdmin\Controllers\ProcessController@postGenerator']);
 Auth::routes();
 
+
 /*
 * CRUD ROOMS
 */
@@ -43,3 +44,14 @@ Route::get('/search/results', function (Request $request) {
     $results =  App\Room::search($request->search)->get();
     return view('search_results', ['results' => $results]);
 })->name('results');
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('users','UserController');
+
+
+Route::get('/DeleteUser/{id}', 'UserController@delete')->name('users.delete');
+Route::get('/MajUser', 'UserController@maj')->name('users.maj');
+Route::get('/ChgPwd', 'UserController@chgpwd')->name('users.chgpwd');
+Route::post('/UpdatePwd', 'UserController@updpwd')->name('users.updpwd');
+Route::get('/SignOut', 'UserController@signout')->name('users.signout');
